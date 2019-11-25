@@ -24,7 +24,6 @@ public class GraphPath {
         for (int i=0; i<vertiges.size();i++) {
           if(!visited[i]) {
             if (g.check(vertiges.get(i), to)) {
-              System.out.printf("1st if: %d %d %d \n", vertiges.get(i), from, to);
               path.add(vertiges.get(i));
               if (g.check(first.get(0), vertiges.get(i))) {
                 Arrays.fill(visited, true);
@@ -34,10 +33,8 @@ public class GraphPath {
                 path(first.get(0), vertiges.get(i));
               }
             } else if (g.get(vertiges.get(i)).isEmpty()) {
-              System.out.printf("2nd if: %d %d %d \n", vertiges.get(i), from, to);
               visited[vertiges.get(i)] = true;
             } else {
-              System.out.printf("3rd if: %d %d %d\n", vertiges.get(i), from, to);
               path(vertiges.get(i), to);
             }
           }
